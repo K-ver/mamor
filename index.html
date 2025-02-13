@@ -3,29 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quiero preguntarte... 💜</title>
+    <title>QUIERO PREGUNTARTE... 💜</title>
     <link rel="stylesheet" href="styles.css">
+    <!-- Agregar fuente Bebas Neue desde Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="container">
         <img id="mainImage" src="/images/imagen1.png" alt="imagen0">
-        <p id="message">¿Quieres ser mi San Valentín?</p>
+        <p id="message">¿QUIERES SER MI SAN VALENTÍN?</p>
         <div class="buttons">
-            <button id="yesButton">Claro que sí mamor</button>
+            <button id="yesButton">CLARO QUE SÍ MAMOR</button>
             <button id="noButton">NO</button>
         </div>
-        <!-- Nueva imagen y frase que aparecerán al hacer clic en "Claro que sí mamor" -->
-        <img id="loveImage" src="/images/imagen3.png" alt="Imagen de amor" style="display: none;">
-        <p id="loveMessage" style="display: none;">Por eso te amo mucho mamoor, siempre tiene que ser sí, tu primera opción</p>
-        <!-- Nueva imagen y frase que aparecerán al hacer clic en "Sí mamor" -->
-        <img id="secondOptionImage" src="/images/imagen7.png" alt="Imagen de segunda opción" style="display: none;">
-        <p id="secondOptionMessage" style="display: none;">Yo también mamoor, aunque no sé por qué esta fue tu segunda opción...</p>
-        <!-- Nueva imagen y frase que aparecerán al hacer clic en "Sí" -->
-        <img id="doubtImage" src="/images/imagen8.png" alt="Imagen de duda" style="display: none;">
-        <p id="doubtMessage" style="display: none;">MMmMMm, ¿cómo que lo andas dudando mucho no?</p>
-        <!-- Imagen y frase final que aparecerán al hacer clic en "OK" -->
-        <img id="finalImage" src="/images/imagen6.png" alt="Imagen final" style="display: none;">
-        <p id="finalMessage" style="display: none;">SI NO QUIERES NO, TAMPOCO TE VOY A OBLIGAR, SE ENTENDER LAS INDIRECTAS, BAI.</p>
+        
+        <!-- Imágenes y mensajes ocultos -->
+        <img id="loveImage" src="/images/imagen3.png" alt="Imagen de amor">
+        <p id="loveMessage">POR ESO TE AMO MUCHO MAMOOR, SIEMPRE TIENE QUE SER SÍ, TU PRIMERA OPCIÓN</p>
+
+        <img id="secondOptionImage" src="/images/imagen7.png" alt="Imagen de segunda opción">
+        <p id="secondOptionMessage">YO TAMBIÉN MAMOOR, AUNQUE NO SÉ POR QUÉ ESTA FUE TU SEGUNDA OPCIÓN...</p>
+
+        <img id="doubtImage" src="/images/imagen8.png" alt="Imagen de duda">
+        <p id="doubtMessage">MMMM, ¿CÓMO QUE LO ANDAS DUDANDO MUCHO NO?</p>
+
+        <img id="angryImage" src="/images/imagenNueva.png" alt="Imagen molesta">
+        <p id="angryMessage">¿POR QUÉ SIGUES DICIENDO NO?</p>
+        
+        <!-- Botón OK dentro del contenedor -->
+        <div class="ok-button-container">
+            <button id="okButton">OK</button>
+        </div>
+
+        <img id="finalImage" src="/images/imagen6.png" alt="Imagen final">
+        <p id="finalMessage">SI NO QUIERES NO, TAMPOCO TE VOY A OBLIGAR, SE ENTENDER LAS INDIRECTAS, BAI.</p>
     </div>
     <script src="script.js"></script>
 </body>

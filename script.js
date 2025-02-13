@@ -4,60 +4,46 @@ document.getElementById('noButton').addEventListener('click', function() {
     noButtonClicks++;
     if (noButtonClicks < 3) {
         // Reducir el tamaño del botón "NO"
-        const scale = 1 - (noButtonClicks * 0.1); // Reduce un 10% cada clic
+        const scale = 1 - (noButtonClicks * 0.1);
         this.style.transform = `scale(${scale})`;
-        
+
         // Aumentar el tamaño del botón "Claro que sí mamor"
         const yesButton = document.getElementById('yesButton');
-        const yesScale = 1 + (noButtonClicks * 0.2); // Aumenta un 20% cada clic
+        const yesScale = 1 + (noButtonClicks * 0.2);
         yesButton.style.transform = `scale(${yesScale})`;
-        
+
         // Mover el botón "NO" hacia la derecha
-        const moveDistance = noButtonClicks * 20; // Mueve 20px hacia la derecha cada clic
+        const moveDistance = noButtonClicks * 20;
         this.style.marginLeft = `${moveDistance}px`;
 
-        // Cambiar el texto del botón "Claro que sí mamor" a "Sí mamor" después del primer clic
+        // Cambiar el texto del botón "Claro que sí mamor"
         if (noButtonClicks === 1) {
-            yesButton.textContent = 'Sí mamor';
-        }
-        // Cambiar el texto del botón "Sí mamor" a "Sí" después del segundo clic
-        else if (noButtonClicks === 2) {
-            yesButton.textContent = 'Sí';
+            yesButton.textContent = 'SÍ MAMOR';
+        } else if (noButtonClicks === 2) {
+            yesButton.textContent = 'SÍ';
         }
     } else {
-        // Cambiar la imagen y el mensaje después de 3 clics
-        document.getElementById('mainImage').src = 'imagen2.jpg';
-        document.getElementById('message').textContent = '¿POR QUÉ SIGUES DICIENDO NO?';
-        this.style.display = 'none'; // Ocultar el botón "NO"
+        // Ocultar imagen y mensaje iniciales
+        document.getElementById('mainImage').style.display = 'none';
+        document.getElementById('message').style.display = 'none';
 
-        // Cambiar el texto del botón "Sí" a "OK"
-        const yesButton = document.getElementById('yesButton');
-        yesButton.textContent = 'OK';
+        // Ocultar botones iniciales
+        this.style.display = 'none';
+        document.getElementById('yesButton').style.display = 'none';
 
-        // Cambiar el comportamiento del botón "OK" para mostrar la imagen final y cerrar la página
-        yesButton.addEventListener('click', function() {
-            // Ocultar la imagen y el mensaje inicial
-            document.getElementById('mainImage').style.display = 'none';
-            document.getElementById('message').style.display = 'none';
-            
-            // Ocultar los botones
-            yesButton.style.display = 'none';
+        // Mostrar imagen y mensaje de enojo
+        document.getElementById('angryImage').style.display = 'block';
+        document.getElementById('angryMessage').style.display = 'block';
 
-            // Mostrar la imagen final y el mensaje
-            document.getElementById('finalImage').style.display = 'block';
-            document.getElementById('finalMessage').style.display = 'block';
-
-            // Cerrar la página después de 10 segundos
-            setTimeout(() => {
-                window.close(); // Cierra la pestaña actual
-            }, 10000); // 10000 milisegundos = 10 segundos
-        });
+        // Mostrar el botón "OK"
+        document.getElementById('okButton').style.display = 'block';
     }
 });
 
+// Función para manejar el clic en el botón "Sí"
 document.getElementById('yesButton').addEventListener('click', function() {
     // Si es la primera vez que se hace clic en "Claro que sí mamor"
-    if (this.textContent === 'Claro que sí mamor') {
+    if (this.textContent === 'CLARO QUE SÍ MAMOR') {
         // Ocultar la imagen y el mensaje inicial
         document.getElementById('mainImage').style.display = 'none';
         document.getElementById('message').style.display = 'none';
@@ -71,7 +57,7 @@ document.getElementById('yesButton').addEventListener('click', function() {
         document.getElementById('loveMessage').style.display = 'block';
     }
     // Si el botón dice "Sí mamor"
-    else if (this.textContent === 'Sí mamor') {
+    else if (this.textContent === 'SÍ MAMOR') {
         // Ocultar la imagen y el mensaje inicial
         document.getElementById('mainImage').style.display = 'none';
         document.getElementById('message').style.display = 'none';
@@ -85,7 +71,7 @@ document.getElementById('yesButton').addEventListener('click', function() {
         document.getElementById('secondOptionMessage').style.display = 'block';
     }
     // Si el botón dice "Sí"
-    else if (this.textContent === 'Sí') {
+    else if (this.textContent === 'SÍ') {
         // Ocultar la imagen y el mensaje inicial
         document.getElementById('mainImage').style.display = 'none';
         document.getElementById('message').style.display = 'none';
@@ -98,22 +84,18 @@ document.getElementById('yesButton').addEventListener('click', function() {
         document.getElementById('doubtImage').style.display = 'block';
         document.getElementById('doubtMessage').style.display = 'block';
     }
-    // Si el botón dice "OK"
-    else if (this.textContent === 'OK') {
-        // Ocultar la imagen y el mensaje inicial
-        document.getElementById('mainImage').style.display = 'none';
-        document.getElementById('message').style.display = 'none';
-        
-        // Ocultar los botones
-        document.getElementById('yesButton').style.display = 'none';
+});
 
-        // Mostrar la imagen final y el mensaje
-        document.getElementById('finalImage').style.display = 'block';
-        document.getElementById('finalMessage').style.display = 'block';
+// Botón OK para mostrar imagen final
+document.getElementById('okButton').addEventListener('click', function() {
+    document.getElementById('angryImage').style.display = 'none';
+    document.getElementById('angryMessage').style.display = 'none';
+    this.style.display = 'none';
 
-        // Cerrar la página después de 10 segundos
-        setTimeout(() => {
-            window.close(); // Cierra la pestaña actual
-        }, 10000); // 10000 milisegundos = 10 segundos
-    }
+    document.getElementById('finalImage').style.display = 'block';
+    document.getElementById('finalMessage').style.display = 'block';
+
+    setTimeout(() => {
+        window.close();
+    }, 7000);
 });
