@@ -49,9 +49,17 @@ button {
     color: white;
 }
 
+#yesButton:hover {
+    background-color: #4cae4c;
+}
+
 #noButton {
     background-color: #d9534f;
     color: white;
+}
+
+#noButton:hover {
+    background-color: #c9302c;
 }
 
 #okButton {
@@ -63,16 +71,15 @@ button {
     border-radius: 5px;
     cursor: pointer;
     text-transform: uppercase;
-    display: none;
-}
-
-/* Contenedor para el botón OK para asegurar que se centre */
-.ok-button-container {
-    display: flex;
-    justify-content: center;
+    display: none; /* Ocultado por defecto */
     margin-top: 20px;
+    
+    /* Centrado horizontal */
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
-#loveImage, #loveMessage, #secondOptionImage, #secondOptionMessage, #doubtImage, #doubtMessage, #finalImage, #finalMessage, #angryImage, #angryMessage {
+.hidden {
     display: none;
 }
