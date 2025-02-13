@@ -1,0 +1,56 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f9e3e3;
+    font-family: 'Arial', sans-serif;
+}
+
+.container {
+    text-align: center;
+}
+
+img {
+    width: 200px;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 24px;
+    color: #d9534f;
+    margin-bottom: 20px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px; /* Espacio entre los botones */
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    flex-shrink: 0; /* Evitar que los botones se encojan */
+}
+
+#yesButton {
+    background-color: #5cb85c;
+    color: white;
+}
+
+#noButton {
+    background-color: #d9534f;
+    color: white;
+}
+
+#loveImage, #loveMessage, #secondOptionImage, #secondOptionMessage, #doubtImage, #doubtMessage, #finalImage, #finalMessage {
+    display: none; /* Ocultar inicialmente las imágenes y mensajes */
+}
